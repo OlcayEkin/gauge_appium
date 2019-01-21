@@ -1,6 +1,6 @@
 # Gauge with Appium & PageFactory
 
-Gauge is a light weight cross-platform test automation tool. It provides the ability to author test cases in the business language. (You can check what gauge is from here)[https://gauge.org].
+Gauge is a light weight cross-platform test automation tool. It provides the ability to author test cases in the business language. [You can check what gauge is from here](https://gauge.org).
 
 ## Installation
 1. Install Java 1.8
