@@ -34,9 +34,6 @@ public class LoginPageObjects extends PageFactory{
     @iOSXCUITFindBy(id = "profile")
     public MobileElement PROFILE;
 
-    @iOSXCUITFindBy(id = "ProfileImage")
-    public MobileElement PROFILE_IMAGE;
-
     @iOSXCUITFindBy(id = "Log out")
     public MobileElement PROFILE_LOGOUT;
 

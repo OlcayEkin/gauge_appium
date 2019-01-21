@@ -43,10 +43,6 @@ public class Browser {
         return driver;
     }
 
-    public static void setDriver(AppiumDriver driver) {
-        Browser.driver = driver;
-    }
-
     @BeforeScenario
     public void setUpSettings(){
         try {
