@@ -1,0 +1,17 @@
+# Specification Heading
+
+|email|password|
+|oo@oo.oo|2580|
+
+Basic Scenario
+--------
+* I am in the home page
+* I want to use my email
+* Set my personal email <email>
+* Set my personal password <password>
+* I expect to see the home page
+
+
+-----
+* Logout the app
+
