@@ -5,25 +5,24 @@ import io.appium.java_client.AppiumDriver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObjects.IOSPageObjects;
 import pageObjects.LoginPageObjects;
 
 import java.util.HashMap;
 
+import static base.BaseMethod.*;
+
 public class ProfilePage {
 
-    protected static final Logger log = LogManager.getLogger(HomePage.class);
-    WebDriverWait wait = new WebDriverWait(Browser.getDriver(), 10);
-    LoginPageObjects loginPageObjects = new LoginPageObjects(Browser.getDriver());
-    IOSPageObjects iosPageObjects = new IOSPageObjects(Browser.getDriver());
-    AppiumDriver driver = Browser.getDriver();
+    private static final Logger log = LogManager.getLogger(EmailPage.class);
+    private LoginPageObjects loginPageObjects = new LoginPageObjects(Browser.getDriver());
+    private AppiumDriver driver = Browser.getDriver();
+    private IOSPageObjects iosPageObjects = new IOSPageObjects(Browser.getDriver());
 
     public void checkProfilePage(){
-        wait.until(ExpectedConditions.visibilityOf(loginPageObjects.PROFILE)).click();
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        HashMap scrollObject = new HashMap<>();
+        waitElement(loginPageObjects.PROFILE).click();
+        JavascriptExecutor js = driver;
+        HashMap<String, String> scrollObject = new HashMap<>();
         scrollObject.put("predicateString", "value == 'Log out'");
         js.executeScript("mobile: scroll", scrollObject);
         loginPageObjects.PROFILE_LOGOUT.click();

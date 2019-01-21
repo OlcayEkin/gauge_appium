@@ -5,29 +5,28 @@ import io.appium.java_client.AppiumDriver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObjects.LoginPageObjects;
+
+import static base.BaseMethod.waitElement;
 
 public class EmailPage {
 
-    protected static final Logger log = LogManager.getLogger(HomePage.class);
-    WebDriverWait wait = new WebDriverWait(Browser.getDriver(), 10);
-    LoginPageObjects loginPageObjects = new LoginPageObjects(Browser.getDriver());
-    AppiumDriver driver = Browser.getDriver();
+    private static final Logger log = LogManager.getLogger(EmailPage.class);
+    private LoginPageObjects loginPageObjects = new LoginPageObjects(Browser.getDriver());
+    private AppiumDriver driver = Browser.getDriver();
 
     public void emailSection(){
-        wait.until(ExpectedConditions.visibilityOf(loginPageObjects.LOGIN)).click();
-        wait.until(ExpectedConditions.visibilityOf(loginPageObjects.EMAIL));
+        waitElement(loginPageObjects.LOGIN).click();
+        waitElement(loginPageObjects.EMAIL);
         if (Browser.isAndroid.equals(false))
-            wait.until(ExpectedConditions.visibilityOf(loginPageObjects.EMAIL)).click();
+            waitElement(loginPageObjects.EMAIL).click();
         log.info("Email section is successfull");
     }
 
     public void setEmail(String mail){
-        wait.until(ExpectedConditions.visibilityOf(loginPageObjects.EMAIL_TEXTAREA)).sendKeys(mail);
-        wait.until(ExpectedConditions.visibilityOf(loginPageObjects.EMAIL_NEXT)).click();
-        wait.until(ExpectedConditions.visibilityOf(loginPageObjects.EMAIL_CONTINUE)).click();
+        waitElement(loginPageObjects.EMAIL_TEXTAREA).sendKeys(mail);
+        waitElement(loginPageObjects.EMAIL_NEXT).click();
+        waitElement(loginPageObjects.EMAIL_CONTINUE).click();
     }
 
     public void setPass(String pass){
