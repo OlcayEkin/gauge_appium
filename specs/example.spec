@@ -5,8 +5,7 @@
 
 Basic Scenario
 --------
-* I am in the home page
-* I want to use my email
+* Navigate to login page
 * Set my personal email <email>
 * Set my personal password <password>
 * I expect to see the home page

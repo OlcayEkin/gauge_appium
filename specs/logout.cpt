@@ -4,3 +4,7 @@ This is a concept file with following syntax for each concept.
 # Logout the app
 * I expect to see the home page
 * Check the profile page
+
+# Navigate to login page
+* I am in the home page
+* I want to use my email
