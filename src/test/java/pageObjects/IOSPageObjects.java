@@ -12,7 +12,7 @@ public class IOSPageObjects {
         PageFactory.initElements(new AppiumFieldDecorator(driver),this);
     }
 
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name='Log out']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeSheet[@name=\"Are you sure you want to log out of the app?\"]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeButton[@name='Log out']")
     public MobileElement IOS_LOGOUT;
 
 }

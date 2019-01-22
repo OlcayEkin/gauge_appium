@@ -2,8 +2,11 @@ package pageObjects.ios;
 
 import base.Browser;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.offset.ElementOption;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.JavascriptExecutor;
 import pageObjects.IOSPageObjects;
 import pageObjects.LoginPageObjects;
@@ -25,12 +28,11 @@ public class ProfilePage {
         HashMap<String, String> scrollObject = new HashMap<>();
         scrollObject.put("predicateString", "value == 'Log out'");
         js.executeScript("mobile: scroll", scrollObject);
-        loginPageObjects.PROFILE_LOGOUT.click();
-        iosPageObjects.IOS_LOGOUT.click();
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        waitElement(loginPageObjects.PROFILE_LOGOUT).click();
+        //driver.context("NATIVE_APP");
+        TouchAction touchAction = new TouchAction(getDriver());
+        touchAction.press(ElementOption.element(iosPageObjects.IOS_LOGOUT)).perform();
+        Assertions.assertTrue(waitElement(loginPageObjects.PROFILE).isDisplayed());
+
     }
 }

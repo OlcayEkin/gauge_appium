@@ -33,6 +33,7 @@ public class Browser {
             capabilities.setCapability("platformVersion","11.2.1");
             capabilities.setCapability("deviceName","iPhone8");
             capabilities.setCapability("udid","a17767370e84fba960142a7d4d2e0e11c2b41299");
+            capabilities.setCapability("clearSystemFiles","true");
             capabilities.setCapability("bundleId", bundleId);
         }
         driver = new AppiumDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);

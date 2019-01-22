@@ -20,6 +20,6 @@ public class HomePage {
    }
 
    public void checkHomePage(){
-      waitElement(loginPageObjects.PROFILE);
+      waitElement(loginPageObjects.LOGIN);
    }
 }
